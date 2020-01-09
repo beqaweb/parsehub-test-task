@@ -1,0 +1,21 @@
+.BreadcrumbItem {
+  display: flex;
+}
+
+.BreadcrumbItem__name {
+  color: #000;
+}
+
+.BreadcrumbItem__name:hover,
+.BreadcrumbItem__name.current {
+  background-color: #e5e5e5;
+}
+
+.BreadcrumbItem__name:not(.current):hover {
+  cursor: pointer;
+}
+
+.BreadcrumbItem__arrow {
+  margin: 0 .5rem;
+  color: #888;
+}

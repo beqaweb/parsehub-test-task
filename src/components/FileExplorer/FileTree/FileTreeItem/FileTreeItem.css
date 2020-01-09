@@ -1,0 +1,17 @@
+.FileTreeItem {
+  margin: .2rem;
+}
+
+.FileTreeItem__type {
+  margin-left: .5rem;
+  font-style: italic;
+}
+
+.FileTreeItem__name {
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.FileTreeItem__name:hover {
+  background-color: #e5e5e5;
+}
