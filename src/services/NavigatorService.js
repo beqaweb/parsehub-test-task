@@ -1,7 +1,7 @@
 import {BehaviorSubject} from 'rxjs';
 import DefaultMockData from '../default-mock-data.json';
 
-class Navigator {
+class NavigatorService {
   constructor() {
     this.mockData = new BehaviorSubject(DefaultMockData);
   }
@@ -43,24 +43,24 @@ class Navigator {
       const splittedPath = path.split('/')
         .filter(item => !!item);
       if (splittedPath.length === 0) {
-        return Navigator.parseNode(data, path, '/');
+        return NavigatorService.parseNode(data, path, '/');
       }
       return splittedPath
         .reduce((data, fileName, index, arr) => {
           if (!data) {
-            return false;
+            return null;
           }
           const node = (data.children || {})[fileName];
           const isLast = arr.length === index + 1;
           if (isLast) {
-            return Navigator.parseNode(node, path, fileName);
+            return NavigatorService.parseNode(node, path, fileName);
           }
           return node;
         }, data);
     } catch (error) {
-      return false;
+      return null;
     }
   }
 }
 
-export default Navigator;
+export default NavigatorService;

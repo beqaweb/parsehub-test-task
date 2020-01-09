@@ -1,3 +1,3 @@
-import Navigator from "./Navigator";
+import NavigatorService from "./NavigatorService";
 
-export const navigatorService = new Navigator();
+export const navigatorService = new NavigatorService();
